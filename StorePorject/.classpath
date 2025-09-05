@@ -6,7 +6,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/project/File/ojdbc11-23.2.0.0.jar">
+=======
+	<classpathentry kind="lib" path="C:/project/dev/ojdbc11-23.2.0.0.jar">
+>>>>>>> 326a56f (orders)
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
