@@ -14,6 +14,7 @@
 			 , ?
 			 , ?
 			 , SYSDATE
+			 , NULL
 			   )
 	</entry>
 	
@@ -26,5 +27,70 @@
 			 , CREATED_AT
 		  FROM 
 		       CUSTOMER
+		 WHERE
+		       IS_DELETED = 'N'
+	</entry>
+	
+	<entry key = "findById">
+		SELECT
+			   CUSTOMER_ID
+			 , NAME
+			 , EMAIL
+			 , PHONE
+			 , CREATED_AT
+		  FROM 
+		       CUSTOMER
+		 WHERE
+		       CUSTOMER_ID = ?
+		  AND
+		  	   IS_DELETED = 'N'
+	</entry>
+	
+	<entry key = "findByEmail">
+		SELECT
+			   CUSTOMER_ID
+			 , NAME
+			 , EMAIL
+			 , PHONE
+			 , CREATED_AT
+		  FROM 
+		       CUSTOMER
+		 WHERE
+		       EMAIL = ?
+		   AND
+		       IS_DELETED = 'N'
+			  
+	</entry>
+	<entry key = "findByName">
+		SELECT
+			   CUSTOMER_ID
+			 , NAME
+			 , EMAIL
+			 , PHONE
+			 , CREATED_AT
+		  FROM 
+		       CUSTOMER
+		 WHERE
+		       NAME = ?
+		   AND
+		       IS_DELETED = 'N'
+	</entry>
+	<entry key = "update">
+		UPDATE
+			   CUSTOMER
+		   SET 
+		   	   PHONE = ?
+		 WHERE
+		       NAME = ?
+		   AND 
+		       EMAIL = ?
+	</entry>
+	<entry key = "delete">
+		UPDATE
+			   CUSTOMER
+		   SET
+		       IS_DELETED = 'Y'
+		 WHERE
+		       EMAIL = ?
 	</entry>
 </properties>
