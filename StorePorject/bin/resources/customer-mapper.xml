@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>MEMBER SQL</comment>
+	<entry key="A">B</entry>
+	<entry key = "save">
+		INSERT
+		  INTO
+		  	   CUSTOMER
+		VALUES
+			   (
+			   ?
+			 , ?
+			 , ?
+			 , ?
+			 , SYSDATE
+			 , DEFAULT
+			   )
+	</entry>
+	
+	<entry key = "findAll">
+		SELECT
+			   CUSTOMER_ID
+			 , NAME
+			 , EMAIL
+			 , PHONE
+			 , CREATED_AT
+		  FROM 
+		       CUSTOMER
+		 WHERE
+		       IS_DELETED = 'N'
+	</entry>
+	
+	<entry key = "findById">
+		SELECT
+			   CUSTOMER_ID
+			 , NAME
+			 , EMAIL
+			 , PHONE
+			 , CREATED_AT
+		  FROM 
+		       CUSTOMER
+		 WHERE
+		       CUSTOMER_ID = ?
+		  AND
+		  	   IS_DELETED = 'N'
+	</entry>
+	
+	<entry key = "findByEmail">
+		SELECT
+			   CUSTOMER_ID
+			 , NAME
+			 , EMAIL
+			 , PHONE
+			 , CREATED_AT
+		  FROM 
+		       CUSTOMER
+		 WHERE
+		       EMAIL = ?
+		   AND
+		       IS_DELETED = 'N'
+			  
+	</entry>
+	<entry key = "findByName">
+		SELECT
+			   CUSTOMER_ID
+			 , NAME
+			 , EMAIL
+			 , PHONE
+			 , CREATED_AT
+		  FROM 
+		       CUSTOMER
+		 WHERE
+		       NAME = ?
+		   AND
+		       IS_DELETED = 'N'
+	</entry>
+	<entry key = "update">
+		UPDATE
+			   CUSTOMER
+		   SET 
+		   	   PHONE = ?
+		 WHERE
+		       NAME = ?
+		   AND 
+		       EMAIL = ?
+	</entry>
+	<entry key = "delete">
+		UPDATE
+			   CUSTOMER
+		   SET
+		       IS_DELETED = 'Y'
+		 WHERE
+		       EMAIL = ?
+	</entry>
+	<entry key = "login">
+	 SELECT 
+	 		CUSTOMER_ID
+	 	  , NAME
+	 	  , EMAIL
+	 	  , PHONE
+	 	  , CREATED_AT
+       FROM 
+        	CUSTOMER
+      WHERE
+       	    EMAIL = ? 
+       	AND 
+       	    PHONE = ? 
+       	AND 
+       		IS_DELETED = 'N'
+	</entry>
+</properties>

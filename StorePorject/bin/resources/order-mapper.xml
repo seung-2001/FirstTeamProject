@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>ORDER SQL</comment>
+	<entry key="orderSave">
+		INSERT
+		INTO
+		ORDERS
+		(
+		ORDER_ID
+		, CUSTOMER_ID
+		, PRODUCT_ID
+		, QUANTITY
+		, ORDER_DATE
+		, IS_DELETED
+		)
+		VALUES
+		(
+		ORDERS_SEQ.NEXTVAL
+		, ?
+		, ?
+		, ?
+		, SYSDATE
+		, 'N'
+		)
+	</entry>
+
+	<entry key="orderFindAll">
+		SELECT
+			   O.ORDER_ID
+			 , C.NAME
+			 , P.NAME
+			 , O.QUANTITY
+			 , O.ORDER_DATE
+			 , O.IS_DELETED
+		  FROM 
+			   ORDERS O
+		  JOIN 
+			   CUSTOMER C ON O.CUSTOMER_ID = C.CUSTOMER_ID
+		  JOIN 
+		       PRODUCT P ON O.PRODUCT_ID = P.PRODUCT_ID
+		 WHERE 
+		       O.IS_DELETED = 'N'
+		 ORDER 
+		    BY 
+		       O.ORDER_DATE DESC
+
+	</entry>
+
+
+	<entry key="orderUpdate">
+		UPDATE
+		ORDERS
+		SET
+		QUANTITY = ?
+		WHERE
+		CUSTOMER_ID = ?
+		AND
+		QUANTITY = ?
+
+	</entry>
+
+	<entry key="orderDelete">
+		UPDATE
+			   ORDERS
+		   SET
+		       IS_DELETED = 'Y'
+		 WHERE
+		       ORDER_ID = ?
+		   AND
+		       CUSTOMER_ID = ?
+	</entry>
+
+</properties>
