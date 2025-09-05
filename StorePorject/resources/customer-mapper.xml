@@ -14,7 +14,7 @@
 			 , ?
 			 , ?
 			 , SYSDATE
-			 , NULL
+			 , DEFAULT
 			   )
 	</entry>
 	
