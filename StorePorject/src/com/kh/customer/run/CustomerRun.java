@@ -1,10 +1,6 @@
-package com.kh.customer.run;
+package src.com.kh.customer.run;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Properties;
-
-import com.kh.customer.view.CustomerView;
+import src.com.kh.customer.view.CustomerView;
 
 public class CustomerRun {
 

@@ -1,12 +1,12 @@
-package com.kh.customer.model.serivce;
+package src.com.kh.customer.model.serivce;
 
 import java.sql.Connection;
 import java.util.List;
 
-import com.kh.customer.common.JDBCTemplate;
-import com.kh.customer.model.dao.CustomerDao;
-import com.kh.customer.model.dto.CustomerDTO;
-import com.kh.customer.model.vo.Customer;
+import src.com.kh.customer.common.JDBCTemplate;
+import src.com.kh.customer.model.dao.CustomerDao;
+import src.com.kh.customer.model.dto.CustomerDTO;
+import src.com.kh.customer.model.vo.Customer;
 
 public class CustomerService {
 	private Connection conn = null;

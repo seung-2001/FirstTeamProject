@@ -1,4 +1,4 @@
-package com.kh.orders.resource;
+package resources;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

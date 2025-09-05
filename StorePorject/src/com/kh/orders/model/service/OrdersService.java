@@ -1,12 +1,12 @@
-package com.kh.orders.model.service;
+package src.com.kh.orders.model.service;
 
 import java.sql.Connection;
 import java.util.List;
 
-import com.kh.customer.common.JDBCTemplate;
-import com.kh.orders.model.DAO.OrdersDAO;
-import com.kh.orders.model.DTO.OrdersDTO;
-import com.kh.orders.model.vo.Orders;
+import src.com.kh.customer.common.JDBCTemplate;
+import src.com.kh.orders.model.DAO.OrdersDAO;
+import src.com.kh.orders.model.DTO.OrdersDTO;
+import src.com.kh.orders.model.vo.Orders;
 
 public class OrdersService {
 	

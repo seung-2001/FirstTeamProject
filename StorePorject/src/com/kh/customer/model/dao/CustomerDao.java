@@ -1,4 +1,4 @@
-package com.kh.customer.model.dao;
+package src.com.kh.customer.model.dao;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.kh.customer.common.JDBCTemplate;
-import com.kh.customer.model.dto.CustomerDTO;
-import com.kh.customer.model.vo.Customer;
+import src.com.kh.customer.common.JDBCTemplate;
+import src.com.kh.customer.model.dto.CustomerDTO;
+import src.com.kh.customer.model.vo.Customer;
 
 public class CustomerDao {
 	Properties prop  = new Properties();

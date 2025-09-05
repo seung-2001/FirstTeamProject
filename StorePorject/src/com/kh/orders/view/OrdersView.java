@@ -1,10 +1,10 @@
-package com.kh.orders.view;
+package src.com.kh.orders.view;
 
 import java.util.List;
 import java.util.Scanner;
 
-import com.kh.orders.controller.OrdersController;
-import com.kh.orders.model.vo.Orders;
+import src.com.kh.orders.controller.OrdersController;
+import src.com.kh.orders.model.vo.Orders;
 
 public class OrdersView {
 

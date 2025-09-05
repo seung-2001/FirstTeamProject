@@ -1,10 +1,10 @@
-package com.kh.customer.controller;
+package src.com.kh.customer.controller;
 
 import java.util.List;
 
-import com.kh.customer.model.dto.CustomerDTO;
-import com.kh.customer.model.serivce.CustomerService;
-import com.kh.customer.model.vo.Customer;
+import src.com.kh.customer.model.dto.CustomerDTO;
+import src.com.kh.customer.model.serivce.CustomerService;
+import src.com.kh.customer.model.vo.Customer;
 
 public class CustomerController {
 

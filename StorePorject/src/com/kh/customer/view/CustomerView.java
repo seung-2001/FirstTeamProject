@@ -1,12 +1,11 @@
-package com.kh.customer.view;
+package src.com.kh.customer.view;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import com.kh.customer.controller.CustomerController;
-import com.kh.customer.model.vo.Customer;
+import src.com.kh.customer.controller.CustomerController;
+import src.com.kh.customer.model.vo.Customer;
 
 public class CustomerView {
 	private Scanner sc = new Scanner(System.in);
@@ -50,11 +49,11 @@ public class CustomerView {
 			case 7 : delete();break;
 			case 8 : islogined = login();break;
 			case 9 :
-				if(islogined = 0) {
-					System.out.println("로그인후 이용해주세요.");
-				}else {
-					ProductView().mainMenu();
-				}
+//				if(islogined = 0) {
+//					System.out.println("로그인후 이용해주세요.");
+//				}else {
+//					ProductView().mainMenu();
+//				}
 				
 			case 0 : return;
 			default : System.out.println("알맞은 숫자를 입력해주세요.");

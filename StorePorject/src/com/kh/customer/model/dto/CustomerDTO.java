@@ -1,4 +1,4 @@
-package com.kh.customer.model.dto;
+package src.com.kh.customer.model.dto;
 
 import java.util.Objects;
 

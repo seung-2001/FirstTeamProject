@@ -1,4 +1,4 @@
-package com.kh.orders.model.DTO;
+package src.com.kh.orders.model.DTO;
 
 public class OrdersDTO {
 

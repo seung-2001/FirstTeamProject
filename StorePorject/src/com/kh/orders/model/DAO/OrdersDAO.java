@@ -1,4 +1,4 @@
-package com.kh.orders.model.DAO;
+package src.com.kh.orders.model.DAO;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.kh.customer.common.JDBCTemplate;
-import com.kh.orders.model.DTO.OrdersDTO;
-import com.kh.orders.model.vo.Orders;
+import src.com.kh.customer.common.JDBCTemplate;
+import src.com.kh.orders.model.DTO.OrdersDTO;
+import src.com.kh.orders.model.vo.Orders;
 
 public class OrdersDAO {
 

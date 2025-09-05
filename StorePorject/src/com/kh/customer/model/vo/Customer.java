@@ -1,4 +1,4 @@
-package com.kh.customer.model.vo;
+package src.com.kh.customer.model.vo;
 
 import java.sql.Date;
 

@@ -1,4 +1,4 @@
-package com.kh.orders.model.vo;
+package src.com.kh.orders.model.vo;
 
 import java.sql.Date;
 import java.util.Objects;

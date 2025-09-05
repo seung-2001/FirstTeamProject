@@ -1,7 +1,7 @@
-package com.kh.orders.run;
+package src.com.kh.orders.run;
 
-import com.kh.customer.common.JDBCTemplate;
-import com.kh.orders.view.OrdersView;
+import src.com.kh.customer.common.JDBCTemplate;
+import src.com.kh.orders.view.OrdersView;
 
 public class Run {
 

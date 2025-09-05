@@ -1,10 +1,10 @@
-package com.kh.orders.controller;
+package src.com.kh.orders.controller;
 
 import java.util.List;
 
-import com.kh.orders.model.DTO.OrdersDTO;
-import com.kh.orders.model.service.OrdersService;
-import com.kh.orders.model.vo.Orders;
+import src.com.kh.orders.model.DTO.OrdersDTO;
+import src.com.kh.orders.model.service.OrdersService;
+import src.com.kh.orders.model.vo.Orders;
 
 public class OrdersController {
 

@@ -1,4 +1,4 @@
-package com.kh.customer.common;
+package src.com.kh.customer.common;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
