@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import src.com.kh.product.controller.ProductController;
 import src.com.kh.product.model.vo.Product;
-
 public class ProductView {
 	
 	private Scanner sc = new Scanner(System.in);
