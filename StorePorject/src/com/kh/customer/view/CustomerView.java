@@ -6,13 +6,15 @@ import java.util.Scanner;
 
 import src.com.kh.customer.controller.CustomerController;
 import src.com.kh.customer.model.vo.Customer;
+import src.com.kh.orders.view.OrdersView;
 
 public class CustomerView {
 	private Scanner sc = new Scanner(System.in);
 	private CustomerController cc = new CustomerController();
 
 	public void mainMenu() {
-		int islogined = 0;
+		
+		int login = 0;
 		while(true) {
 			System.out.println();
 			System.out.println();
@@ -20,15 +22,16 @@ public class CustomerView {
 			System.out.println("고객 서비스 입니다.");
 			System.out.println("================================================");
 			System.out.println("==== 메뉴 ===");
-			System.out.println("1. 고객 등록");
-			System.out.println("2. 고객 전체 조회");
-			System.out.println("3. 고객 아이디(No)로 조회");
-			System.out.println("4. 이메일 조회 ");
-			System.out.println("5. 고객 이름 조회 ");
-			System.out.println("6. 고객 정보 수정");
-			System.out.println("7. 회원 탈퇴");
-			System.out.println("8. 로그인");
-			System.out.println("9. 상품 서비스");
+			System.out.println(" 1. 고객 등록");
+			System.out.println(" 2. 고객 전체 조회");
+			System.out.println(" 3. 고객 아이디(No)로 조회");
+			System.out.println(" 4. 이메일 조회 ");
+			System.out.println(" 5. 고객 이름 조회 ");
+			System.out.println(" 6. 고객 정보 수정");
+			System.out.println(" 7. 회원 탈퇴");
+			System.out.println(" 8. 로그인");
+			System.out.println(" 9. 상품 서비스");
+			System.out.println("10. 주문 서비스");
 			System.out.println("0. 종료");
 			System.out.print("메뉴 번호를 선택하세요 > ");
 			int menuNo = 10;
@@ -47,14 +50,19 @@ public class CustomerView {
 			case 5 : findByName();break;
 			case 6 : update();break;
 			case 7 : delete();break;
-			case 8 : islogined = login();break;
+			case 8 : login = login();break;
 			case 9 :
 //				if(islogined = 0) {
 //					System.out.println("로그인후 이용해주세요.");
 //				}else {
 //					ProductView().mainMenu();
 //				}
-				
+			case 10: if(login == 0) {
+				System.out.println("로그인후 이용해주세요.");
+			}else {
+				new OrdersView().mainMenu();
+			}
+			break;
 			case 0 : return;
 			default : System.out.println("알맞은 숫자를 입력해주세요.");
 			}

@@ -50,7 +50,9 @@ public class CustomerController {
 
 
 	public Customer login(String email, String phone) {
-	    return new CustomerService().findByEmailAndPhone(email, phone);
+		Customer customer = new Customer();
+		customer = new CustomerService().findByEmailAndPhone(email, phone);
+	    return customer;
 	}
 
 
