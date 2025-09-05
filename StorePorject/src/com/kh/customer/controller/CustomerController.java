@@ -48,4 +48,11 @@ public class CustomerController {
 		return result;
 	}
 
+
+	public Customer login(String email, String phone) {
+	    return new CustomerService().findByEmailAndPhone(email, phone);
+	}
+
+
+
 }

@@ -196,4 +196,32 @@ public class CustomerDao {
 		}
 		return result;
 	}
+	public Customer login(Connection conn, String email, String phone) {
+	    PreparedStatement pstmt = null;
+	    ResultSet rset = null;
+	    Customer customer = new Customer();
+	    String sql = prop.getProperty("login"); 
+
+	    try {
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, email);
+	        pstmt.setString(2, phone);
+	        rset = pstmt.executeQuery();
+	        if (rset.next()) {
+	            customer = new Customer(
+	                rset.getString("CUSTOMER_ID"),
+	                rset.getString("NAME"),
+	                rset.getString("EMAIL"),
+	                rset.getString("PHONE"),
+	                rset.getDate("CREATED_AT")
+	            );
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        JDBCTemplate.close(rset);
+	        JDBCTemplate.close(pstmt);
+	    }
+	    return customer;
+	}
 }

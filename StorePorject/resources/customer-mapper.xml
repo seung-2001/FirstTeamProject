@@ -93,4 +93,20 @@
 		 WHERE
 		       EMAIL = ?
 	</entry>
+	<entry key = "login">
+	 SELECT 
+	 		CUSTOMER_ID
+	 	  , NAME
+	 	  , EMAIL
+	 	  , PHONE
+	 	  , CREATED_AT
+       FROM 
+        	CUSTOMER
+      WHERE
+       	    EMAIL = ? 
+       	AND 
+       	    PHONE = ? 
+       	AND 
+       		IS_DELETED = 'N'
+	</entry>
 </properties>

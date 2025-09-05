@@ -76,4 +76,16 @@ public class CustomerService {
 		JDBCTemplate.close(conn);
 		return result;
 	}
+
+	public Customer findByEmailAndPhone(String email, String phone) {
+		Customer customer = new CustomerDao().login(conn,email,phone);
+		if(customer != null) {
+			JDBCTemplate.close(conn);
+		}
+		return customer;
+	}
+
+	
+
+	
 }
