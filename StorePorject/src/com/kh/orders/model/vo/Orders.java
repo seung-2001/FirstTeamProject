@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Orders {
 
 	private int orderId;
-	private int customerId;
+	private String customerId;
 	private int productId;
 	private int quantity;
 	private Date orderDate;
@@ -15,7 +15,7 @@ public class Orders {
 		super();
 	}
 
-	public Orders(int orderId, int customerId, int productId, int quantity, Date orderDate) {
+	public Orders(int orderId, String customerId, int productId, int quantity, Date orderDate) {
 		super();
 		this.orderId = orderId;
 		this.customerId = customerId;
@@ -26,13 +26,13 @@ public class Orders {
 	
 	
 
-	public Orders(int orderId, int customerId) {
+	public Orders(int orderId, String customerId) {
 		super();
 		this.orderId = orderId;
 		this.customerId = customerId;
 	}
 
-	public Orders(int customerId, int productId, int quantity) {
+	public Orders(String customerId, int productId, int quantity) {
 		super();
 		this.customerId = customerId;
 		this.productId = productId;
@@ -43,7 +43,7 @@ public class Orders {
 		return orderId;
 	}
 
-	public int getCustomerId() {
+	public String getCustomerId() {
 		return customerId;
 	}
 

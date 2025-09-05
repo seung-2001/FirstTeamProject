@@ -55,8 +55,7 @@ public class OrdersView {
 		System.out.println("주문하기 서비스 입니다. ");
 		
 		System.out.print("주문자 아이디를 입력하세요 > ");
-		int customerId = sc.nextInt();
-		sc.nextLine();
+		String customerId = sc.nextLine();
 		
 		System.out.print("상품 번호를 입력하세요 > ");
 		int productId = sc.nextInt();
@@ -95,7 +94,6 @@ public class OrdersView {
 	}
 	private void orderUpdate() {
 		
-		System.out.println("주문 수량 변경하기 > ");
 		
 		System.out.print("고객의 아이디를 입력해주세요 > ");
 		int customerId = sc.nextInt();
@@ -126,8 +124,7 @@ public class OrdersView {
 		sc.nextLine();
 		
 		System.out.println("삭제하실 고객 아이디를 입력해주세요 > ");
-		int customerId = sc.nextInt();
-		sc.nextLine();
+		String customerId = sc.nextLine();
 		
 		int result = oc.orderDelete(orderId, customerId);
 		

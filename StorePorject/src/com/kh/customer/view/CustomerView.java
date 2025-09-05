@@ -7,6 +7,7 @@ import java.util.Scanner;
 import src.com.kh.customer.controller.CustomerController;
 import src.com.kh.customer.model.vo.Customer;
 import src.com.kh.orders.view.OrdersView;
+import src.com.kh.product.view.ProductView;
 
 public class CustomerView {
 	private Scanner sc = new Scanner(System.in);
@@ -52,11 +53,11 @@ public class CustomerView {
 			case 7 : delete();break;
 			case 8 : login = login();break;
 			case 9 :
-//				if(islogined = 0) {
-//					System.out.println("로그인후 이용해주세요.");
-//				}else {
-//					ProductView().mainMenu();
-//				}
+				if(login == 0) {
+					System.out.println("로그인후 이용해주세요.");
+				}else {
+					new ProductView().mainMenu();
+				}
 			case 10: if(login == 0) {
 				System.out.println("로그인후 이용해주세요.");
 			}else {

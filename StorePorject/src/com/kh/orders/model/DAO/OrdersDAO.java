@@ -34,7 +34,7 @@ public class OrdersDAO {
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, orders.getCustomerId());
+			pstmt.setString(1, orders.getCustomerId());
 			pstmt.setInt(2, orders.getProductId());
 			pstmt.setInt(3, orders.getQuantity());
 			
@@ -61,7 +61,7 @@ public class OrdersDAO {
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
 				Orders order = new Orders(rset.getInt("ORDER_ID")
-						, rset.getInt("CUSTOMER_ID")
+						, rset.getString("CUSTOMER_ID")
 						, rset.getInt("PRODUCT_ID")
 						, rset.getInt("QUANTITY")
 						, rset.getDate("ORDER_DATE"));
@@ -112,7 +112,7 @@ public class OrdersDAO {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, orders.getOrderId());
-			pstmt.setInt(2, orders.getCustomerId());
+			pstmt.setString(2, orders.getCustomerId());
 			
 			result = pstmt.executeUpdate();
 			

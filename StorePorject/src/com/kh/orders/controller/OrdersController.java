@@ -8,7 +8,7 @@ import src.com.kh.orders.model.vo.Orders;
 
 public class OrdersController {
 
-	public int orderSave(int customerId, int productId, int quantity) {
+	public int orderSave(String customerId, int productId, int quantity) {
 	
 		Orders orders = new Orders(customerId, productId, quantity);
 		
@@ -33,7 +33,7 @@ public class OrdersController {
 		return result;
 	}
 
-	public int orderDelete(int orderId, int customerId) {
+	public int orderDelete(int orderId, String customerId) {
 		
 		Orders orders = new Orders(orderId, customerId);
 		int result = new OrdersService().orderDelete(orders);

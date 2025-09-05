@@ -28,8 +28,8 @@
 	<entry key="orderFindAll">
 		SELECT
 			   O.ORDER_ID
-			 , C.NAME
-			 , P.NAME
+			 , C.CUSTOMER_ID
+			 , P.PRODUCT_ID
 			 , O.QUANTITY
 			 , O.ORDER_DATE
 			 , O.IS_DELETED
