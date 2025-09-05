@@ -1,9 +1,12 @@
 package com.kh.customer.view;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 import com.kh.customer.controller.CustomerController;
+import com.kh.customer.model.vo.Customer;
 
 public class CustomerView {
 	private Scanner sc = new Scanner(System.in);
@@ -11,6 +14,7 @@ public class CustomerView {
 	public void mainMenu() {
 		while(true) {
 			
+			System.out.println("================================================");
 			System.out.println("고객 서비스 입니다.");
 			System.out.println("================================================");
 			System.out.println("==== 메뉴 ===");
@@ -33,7 +37,7 @@ public class CustomerView {
 			
 			switch(menuNo) {
 			case 1 : save();break;
-			case 2 : break;
+			case 2 : findAll();break;
 			case 3 : break;
 			case 4 : break;
 			case 5 : break;
@@ -47,6 +51,7 @@ public class CustomerView {
 		
 		
 	}
+
 
 	private void save() {
 		System.out.println("== 고객 등록 ==");
@@ -69,4 +74,17 @@ public class CustomerView {
 		
 	}
 
+	private void findAll() {
+		System.out.println("== 고객 전체 조회 ==");
+		List<Customer> customers =	cc.findAll();
+		for(Customer customer : customers) {
+			System.out.print("고객 아이디 : " + customer.getCustomerId() 
+							+ "\t고객명 : " + customer.getName()
+							+ "\t이메일 : " + customer.getEmail()
+							+ "\t전화번호 : " + customer.getPhone()
+							+ "\t등록일 : "+ customer.getCreateDate());
+		}
+		
+		System.out.println("");
+	}
 }

@@ -16,4 +16,15 @@
 			 , SYSDATE
 			   )
 	</entry>
+	
+	<entry key = "findAll">
+		SELECT
+			   CUSTOMER_ID
+			 , NAME
+			 , EMAIL
+			 , PHONE
+			 , CREATED_AT
+		  FROM 
+		       CUSTOMER
+	</entry>
 </properties>

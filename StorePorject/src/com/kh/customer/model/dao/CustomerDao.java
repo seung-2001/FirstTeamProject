@@ -4,7 +4,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import com.kh.customer.common.JDBCTemplate;
@@ -38,5 +41,33 @@ public class CustomerDao {
 			JDBCTemplate.close(pstmt);
 		}
 		return result;
+	}
+
+	public List<Customer> findAll(Connection conn) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		List<Customer> customers = new ArrayList();
+		
+		String sql = prop.getProperty("findAll");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rset = pstmt.executeQuery();
+			while(rset.next()) {
+				Customer customer = new Customer(rset.getString("CUSTOMER_ID")
+											   , rset.getString("NAME")
+											   , rset.getString("EMAIL")
+											   , rset.getString("PHONE")
+											   , rset.getDate("CREATED_AT"));
+				customers.add(customer);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(pstmt);
+		}
+		
+		return customers;
 	}
 }
