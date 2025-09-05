@@ -4,18 +4,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import com.kh.customer.view.CustomerView;
+
 public class CustomerRun {
 
 	public static void main(String[] args) {
-		Properties prop = new Properties();
-		prop.setProperty("A", "B");
-		
-		try {
-			//prop.store(new FileOutputStream("driver.properties"), "setting for DBMS");
-			prop.storeToXML(new FileOutputStream("member-mapper.xml"), "MEMBER SQL");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	
+		CustomerView cv = new CustomerView();
+		cv.mainMenu();
 	}
 
 }
